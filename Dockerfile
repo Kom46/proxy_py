@@ -1,7 +1,7 @@
-FROM python:3.7-slim
+FROM python:3.11
 
 RUN apt-get update \
-	&& apt-get install -y wget \
+	&& apt-get install -y wget git python3-poetry\
 	&& rm -rf /var/lib/apt/lists/* \
 	&& rm /bin/sh \
 	&& ln -s /bin/bash /bin/sh \
@@ -13,14 +13,14 @@ RUN apt-get update \
 WORKDIR /proxy_py
 USER user
 
-ARG VERSION=1f186bc451781047175655656c0bcb655e174660
+ARG VERSION=kom46_proxy_py
 
 RUN echo "Downloading proxy_py sources..." \
-	&& wget https://github.com/DevAlone/proxy_py/archive/$VERSION.tar.gz -O sources.tar.gz 2> /dev/null \
-	&& tar -xf sources.tar.gz && rm sources.tar.gz \
-	&& mv proxy_py-*/.[!.]* ./ && mv proxy_py-*/* ./ \
-	&& rmdir proxy_py-* \
+	&& git clone https://github.com/Kom46/proxy_py.git -b ${VERSION} \
+	# && mv proxy_py-*/.[!.]* ./ && mv proxy_py-*/* ./ \
+	# && rmdir proxy_py-* \
 	&& python3 -m venv env \
+	&& poetry env use env \
 	# they became too greedy to allow free downloading
 	# && echo "Creating IP:Location database..." \
 	# && mkdir /tmp/proxy_py_9910549a_7d41_4102_9e9d_15d39418a5cb \
@@ -32,7 +32,8 @@ RUN echo "Downloading proxy_py sources..." \
 	&& cd /proxy_py \
 	&& cp config_examples/settings.py proxy_py/settings.py \
 	&& echo "Installing dependencies..." \
-	&& source ./env/bin/activate \
-	&& pip3 install -r requirements.txt --no-cache-dir
+	&& poetry install --without=dev
+	# && source ./env/bin/activate \
+	# && pip3 install -r requirements.txt --no-cache-dir
 
 EXPOSE 55555

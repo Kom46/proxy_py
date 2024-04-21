@@ -12,11 +12,11 @@ services:
             - db_data:/var/lib/postgresql/data
             - ./init_db.sql:/docker-entrypoint-initdb.d/init_db.sql
     core:
-        image: "devalone/proxy_py:latest"
+        image: "kom46/proxy_py:latest"
         command: >
           bash -c "
             source /proxy_py/env/bin/activate &&
-            pip3 install -r /proxy_py/local/requirements.txt &&
+            poetry install --without=dev &&
             /proxy_py/run.sh
           "
         restart: always

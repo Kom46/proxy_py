@@ -11,3 +11,5 @@ proxypy.egg-info/
 build/
 local/
 .pytest_cache
+.vscode-ctags
+.venv
