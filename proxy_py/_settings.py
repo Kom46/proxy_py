@@ -47,7 +47,7 @@ Fetcher settings
 # you can override COLLECTORS_DIR and PROXY_CHECKERS
 COLLECTORS_DIRS = [
     "collectors",
-    # 'local/collectors',  # use to add your own collectors
+    'local/collectors',  # use to add your own collectors
 ]
 
 NUMBER_OF_CONCURRENT_TASKS = 128

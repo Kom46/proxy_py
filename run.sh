@@ -1,5 +1,5 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
-source ./env/bin/activate
+source ./.venv/bin/activate
 
 python main.py "$@"

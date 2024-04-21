@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 if [ $# -eq 0 ]
 then
 	tag='latest'
@@ -8,5 +8,5 @@ else
 	git checkout $tag || exit 1
 fi
 
-docker build -t kom46/proxy_py:$tag .
+docker build -t proxy_py:$tag .
 docker push kom46/proxy_py:$tag

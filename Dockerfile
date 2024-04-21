@@ -13,14 +13,14 @@ RUN apt-get update \
 WORKDIR /proxy_py
 USER user
 
-ARG VERSION=kom46_proxy_py
+ARG VERSION=exec_bug
 
 RUN echo "Downloading proxy_py sources..." \
-	&& git clone https://github.com/Kom46/proxy_py.git -b ${VERSION} \
+	&& git clone https://github.com/Kom46/proxy_py.git -b ${VERSION} /proxy_py \
 	# && mv proxy_py-*/.[!.]* ./ && mv proxy_py-*/* ./ \
 	# && rmdir proxy_py-* \
-	&& python3 -m venv env \
-	&& poetry env use env \
+	&& python3 -m venv .venv \
+	&& poetry env use .venv/bin/python3 \
 	# they became too greedy to allow free downloading
 	# && echo "Creating IP:Location database..." \
 	# && mkdir /tmp/proxy_py_9910549a_7d41_4102_9e9d_15d39418a5cb \

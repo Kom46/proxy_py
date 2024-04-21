@@ -15,7 +15,7 @@ services:
         image: "kom46/proxy_py:latest"
         command: >
           bash -c "
-            source /proxy_py/env/bin/activate &&
+            poetry env use /proxy_py/.venv/bin/python3 &&
             poetry install --without=dev &&
             /proxy_py/run.sh
           "
