@@ -15,7 +15,6 @@ import asyncio
 import logging
 import subprocess
 import sys
-import aiohttp
 from statistics import statistics
 
 import collectors_list
