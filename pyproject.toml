@@ -20,6 +20,7 @@ geoip2 = "^4.8.0"
 bs4 = "^0.0.2"
 aiohttp = "^3.9.5"
 aiohttp-jinja2 = "^1.6"
+peewee = "^3.17.3"
 
 [tool.poetry.group.dev.dependencies]
 black = "^24.4.0"

@@ -881,6 +881,16 @@ files = [
 ]
 
 [[package]]
+name = "peewee"
+version = "3.17.3"
+description = "a little orm"
+optional = false
+python-versions = "*"
+files = [
+    {file = "peewee-3.17.3.tar.gz", hash = "sha256:ef15f90b628e41a584be8306cdc3243c51f73ce88b06154d9572f6d0284a0169"},
+]
+
+[[package]]
 name = "platformdirs"
 version = "4.2.0"
 description = "A small Python package for determining appropriate platform-specific dirs, e.g. a \"user data dir\"."
@@ -1415,4 +1425,4 @@ multidict = ">=4.0"
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "f377fa7555c023db0655ed1175a72417de5747b53892313d4a0f278a489edba3"
+content-hash = "dc80142df20643995d5b362411c675d34dc0348819bd31f76b38231118498c9d"
