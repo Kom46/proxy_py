@@ -22,7 +22,6 @@ aiohttp = "^3.9.5"
 aiohttp-jinja2 = "^1.6"
 peewee = "^3.17.3"
 peewee-async = "^0.10.0"
-aiosocks = "^0.2.6"
 aiopg = "^1.4.0"
 
 [tool.poetry.group.dev.dependencies]
