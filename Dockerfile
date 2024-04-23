@@ -32,7 +32,9 @@ RUN echo "Downloading proxy_py sources..." \
 	# && mv GeoLite2-City_*/GeoLite2-City.mmdb ./ \
 	# && rm -r GeoLite2-City_* \
 	&& cd /proxy_py \
-	&& cp config_examples/settings.py proxy_py/settings.py \
+	&& cp config_examples/docker_settings.py /proxy_py/proxy_py/settings.py \
+	&& mkdir -p /proxy_py/local \
+	&& ln -sr /proxy_py/proxy_py/settings.py /proxy_py/local/settings.py \
 	&& echo "Installing dependencies..." \
 	&& poetry install --without=dev
 	# && source ./env/bin/activate \

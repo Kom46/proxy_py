@@ -143,6 +143,22 @@ files = [
 frozenlist = ">=1.1.0"
 
 [[package]]
+name = "aiosocks"
+version = "0.2.6"
+description = "SOCKS proxy client for asyncio and aiohttp"
+optional = false
+python-versions = "*"
+files = []
+develop = false
+
+[package.dependencies]
+aiohttp = ">=3.4"
+
+[package.source]
+type = "directory"
+url = "aiosocks"
+
+[[package]]
 name = "alabaster"
 version = "0.7.16"
 description = "A light, configurable Sphinx theme"
@@ -1555,4 +1571,4 @@ multidict = ">=4.0"
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "6df32116a17ec3f0a558d8c56e84b746ad48d4403eccbb3faef86f702b0702c4"
+content-hash = "cc0d93745b913aa323128760c7c48f9fa4db5bee40cd65b23a9fc1a77b4cc84a"

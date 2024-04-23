@@ -13,11 +13,12 @@ services:
             - ./init_db.sql:/docker-entrypoint-initdb.d/init_db.sql
     core:
         image: "kom46/proxy_py:latest"
+        working_dir: /proxy_py
         command: >
           bash -c "
             poetry env use /proxy_py/.venv/bin/python3 &&
             poetry install --without=dev &&
-            /proxy_py/run.sh
+            ./run.sh
           "
         restart: always
         ports:
@@ -29,7 +30,6 @@ services:
             - db
         volumes:
             - ./local/:/proxy_py/local/
-            - ./proxy_py/settings.py:/proxy_py/proxy_py/settings.py
 
 volumes: 
     db_data:

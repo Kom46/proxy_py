@@ -13,3 +13,5 @@ local/
 .pytest_cache
 .vscode-ctags
 .venv
+aiosocks
+.vscode
