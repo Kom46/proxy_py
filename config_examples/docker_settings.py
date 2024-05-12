@@ -3,7 +3,7 @@ from ._settings import *
 DEBUG = False
 
 # override db settings here
-DATABASE_CONNECTION_KWARGS["host"] = "localhost"
+DATABASE_CONNECTION_KWARGS["host"] = "172.168.1.2"
 DATABASE_CONNECTION_KWARGS["database"] = "proxy_py"
 DATABASE_CONNECTION_KWARGS["user"] = "proxy_py"
 DATABASE_CONNECTION_KWARGS["password"] = "proxy_py"
