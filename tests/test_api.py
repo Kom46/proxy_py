@@ -18,9 +18,8 @@ async def check_ordering(session, field_name):
     previous_proxy = None
 
     for proxy in await get_proxies(session, request_data):
-        if previous_proxy is not None:
-            if previous_proxy[field_name] > proxy[field_name]:
-                return False
+        if previous_proxy is not None and previous_proxy[field_name] > proxy[field_name]:
+            return False
 
         previous_proxy = proxy
 
